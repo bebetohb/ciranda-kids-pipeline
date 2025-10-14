@@ -32,15 +32,15 @@ Este projeto simula uma pipeline de dados **end-to-end** para uma loja fictícia
 │
 ├── data/ (criar manualmente)
 │ ├── raw/ → Contém o arquivo bruto .xlsx com os dados originais
-│ ├── staging/ → Armazena as tabelas quebradas por arquivo .csv
+│ ├── staging/ → Armazena as tabelas quebradas em arquivos .csv
 │ └── processed/ → Dados transformados e modelados para o PostgreSQL
 │
 ├── powerbi/ → Pasta para o arquivo do dashboard .pbix
 │
-├── .gitignore → Arquivo de configuração para ignorar dados sensíveis
+├── .gitignore → Ignora dados sensíveis e temporários
 ├── Dockerfile → Configuração da imagem Docker
 ├── docker-compose.yaml → Orquestração dos containers (Airflow, PostgreSQL etc.)
-├── requirements.txt → Lista de pacotes e dependências do projeto
+├── requirements.txt → Lista de pacotes e dependências
 └── README.md → Documentação principal do projeto
 
 ## 📊 Orquestrador Airflow
@@ -75,8 +75,11 @@ O dashboard apresenta:
 
 5. Planilha .xlsx modelo do projeto (favor solicitar)
 
-6. Arquivo .env na raiz do projeto com os dados de conexao do banco de dados e do Airflow:
+6. Arquivo `.env` na raiz do projeto
 
+Crie um arquivo chamado `.env` na **raiz do projeto** com as variáveis de conexão do banco de dados e do Airflow:
+
+```env
 DB_HOST=host.docker.internal
 DB_PORT=5432
 DB_NAME=#nome_do_seu_banco
@@ -86,7 +89,6 @@ DB_PASSWORD=#sua_senha
 AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://usuario_airflow:senha_do_airflow@host.docker.internal:5432/banco_do_airflow
 AIRFLOW__CORE__EXECUTOR=LocalExecutor
 AIRFLOW__CORE__LOAD_EXAMPLES=false
-
 
 **PS: É necessário a instalação do Power BI desktop, Docker e PostgreSQL**
 
