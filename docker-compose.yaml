@@ -1,0 +1,26 @@
+version: "3.9"
+services:
+  airflow:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: custom-airflow:latest
+    container_name: airflow
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
+      - ./etl:/opt/airflow/etl
+      - ./.env:/opt/airflow/.env
+      - ./data:/opt/airflow/data
+      - ./data/processed:/opt/airflow/data/processed
+      - ./requirements.txt:/requirements.txt
+
+    ports:
+      - "8080:8080"
+    command: >
+      bash -c "airflow db init && airflow webserver & airflow scheduler"
+      bash -c "pip install -r /requirements.txt && airflow webserver"

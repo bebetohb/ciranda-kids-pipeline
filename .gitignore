@@ -1,0 +1,56 @@
+# 🐍 Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.env
+*.env
+
+# 🐘 PostgreSQL
+*.sql
+*.dump
+
+# 🧪 Airflow
+logs/
+dags/__pycache__/
+airflow.db
+unittest.cfg
+
+# 📊 Power BI
+*.pbix
+*.pbix-data
+
+# 📁 Dados
+data/
+data/raw/
+data/processed/
+*.csv
+*.xlsx
+*.json
+
+# 🐳 Docker
+*.log
+*.pid
+*.sock
+*.db
+*.tar
+*.gz
+
+# 💻 VSCode
+.vscode/
+*.code-workspace
+
+# 📦 Dependências
+*.lock
+*.bak
+*.tmp
+
+# 📷 Imagens e arquivos grandes
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.mp4
+*.zip
+*.rar
