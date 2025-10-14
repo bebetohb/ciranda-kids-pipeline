@@ -45,8 +45,8 @@ Este projeto simula uma pipeline de dados **end-to-end** para uma loja fictícia
 
 ## 📊 Orquestrador Airflow
 
-![alt text](image-1.png)
-![alt text](image-2.png)
+![Tela inicial do Airflow](./imagens/airflowdags.png)
+![DAG do projeto](./imagens/dag.png)
 
 ## 📊 Dashboard Power BI
 
@@ -58,7 +58,7 @@ O dashboard apresenta:
 - Mapa de fornecedores por cidade
 - KPIs como ticket médio e margem total
 
-![alt text](image.png)
+![Exibição do Dashboard](./imagens/bi.png)
 
 ## 🧪 Como Executar Localmente
 
